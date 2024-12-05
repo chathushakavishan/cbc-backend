@@ -43,7 +43,6 @@ app.use(
 
 )
 
-app.use("/api/students",studentRouter)
 app.use("/api/products",productRouter)
 app.use("/api/users",userRouter)
 app.listen(
