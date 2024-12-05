@@ -1,6 +1,7 @@
 import Product  from "../models/product.js";
 
 export async function getProduct(req,res){
+  
   try{
     const productlist = await Product.find()
 
