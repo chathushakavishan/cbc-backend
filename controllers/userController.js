@@ -8,6 +8,22 @@ dotenv.config()
 export function createUser(req,res){
 
   const newUserData = req.body
+    if(newUserData.type == "admin"){
+
+      if(newUserData.type==null){
+        res.json({
+          messege: "Please Logis as a Administrative to Create Admin Accounts"
+        })
+        return
+      }
+
+      if(req.user.type != "admin"){
+        res.json({
+          messege : "Please Logis as a Administrative to Create Admin Accounts"
+        })
+        return
+      }
+    }
 
   newUserData.password = bcrypt.hashSync(newUserData.password, 10)  
 
